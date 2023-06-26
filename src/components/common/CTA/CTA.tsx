@@ -47,7 +47,7 @@ const CTA = () => {
         </div>
       </div>
       <div className="relative">
-        <Image src={Tablet} alt="tablet" full={true} priority />
+        <Image src={Tablet} alt="tablet"  priority />
       </div>
     </section>
   );

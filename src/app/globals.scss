@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,400;0,500;0,600;1,400;1,500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  min-height: 100svh;
+}
+
+button {
+  background-color: unset;
+  border: unset;
+  outline: unset;
+  cursor: pointer;
+}
+
+.logos {
+  display: grid;
+  column-gap: 45px;
+  row-gap: 55px;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+}
+
+.logos img {
+  aspect-ratio: 4/2;
+  object-fit: contain;
+  /* width: 100%; */
+}
+
+@layer components {
+  .resp-margin {
+    @apply mx-16px md:mx-32px lg:mx-75px;
+  }
+
+  .resp-padding {
+    @apply px-16px md:px-32px lg:px-75px py-[64px];
+  }
+
+  .border-1px {
+    @apply border-b-[1px] border-b-[#FFFFFF26];
+  }
+}

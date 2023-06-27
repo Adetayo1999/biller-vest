@@ -29,6 +29,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
 main {
   min-height: 100svh;
 }
@@ -38,6 +48,19 @@ button {
   border: unset;
   outline: unset;
   cursor: pointer;
+}
+
+input {
+  padding: 14px 8px;
+
+  &::placeholder {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23.45px;
+    letter-spacing: -2%;
+    color: white;
+  }
 }
 
 .logos {

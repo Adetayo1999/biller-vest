@@ -17,6 +17,9 @@ interface Props {
   btnColor1?: string;
   btnColor2?: string;
   title?: string;
+  listGap?: string;
+  paragraphWidth?: string;
+  contentGap?: string;
 }
 
 const Info: FC<Props> = ({
@@ -31,10 +34,13 @@ const Info: FC<Props> = ({
   btnColor1,
   btnColor2,
   title,
+  listGap,
+  paragraphWidth,
+  contentGap,
 }) => {
   return (
     <div
-      className={`py-[50px] resp-padding ${bgColor} flex items-center ${
+      className={`py-[50px] resp-padding ${bgColor} ${contentGap} flex items-center ${
         reversedRow ? "flex-row-reverse" : "flex-row"
       } `}
     >
@@ -48,7 +54,7 @@ const Info: FC<Props> = ({
             {list.map((item, index) => (
               <div
                 className={`flex ${
-                  isFullStop ? "gap-[2px]" : "gap-[25px] "
+                  listGap ? listGap : isFullStop ? "gap-[2px]" : "gap-[25px] "
                 }   items-center `}
                 id={`${index}`}
               >
@@ -71,7 +77,9 @@ const Info: FC<Props> = ({
           </div>
         )}
         {paragraph && (
-          <p className=" text-blue-text font-normal mt-[40px] text-[20px] ">
+          <p
+            className={` text-blue-text font-normal mt-[40px] text-[18px] ${paragraphWidth} `}
+          >
             {paragraph}
           </p>
         )}

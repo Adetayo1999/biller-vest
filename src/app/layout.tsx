@@ -1,6 +1,8 @@
 import Navbar from "@/components/common/navbar/Navbar";
 import "./globals.scss";
 import { Roboto } from "next/font/google";
+import BillervestCoin from "@/components/common/product/BillervestCoin";
+import Footer from "@/components/common/footer/Footer";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -24,6 +26,8 @@ export default function RootLayout({
       <body className={`${roboto.className} bg-main`}>
         <Navbar />
         {children}
+        <BillervestCoin />
+        <Footer />
       </body>
     </html>
   );

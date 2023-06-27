@@ -36,7 +36,7 @@ const InfoContents = () => {
       />
       <Info
         image={Phone4}
-        list={list1}
+        list={list2}
         btnColor2="bg-[#1A1A1A]"
         btnTitle2="Try on this site"
         reversedRow

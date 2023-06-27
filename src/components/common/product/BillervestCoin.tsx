@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const BillervestCoin = () => {
   return (
-    <section className="my-[300px] resp-margin flex flex-col items-center justify-center gap-[40px] ">
+    <section className="my-[200px] resp-margin flex flex-col items-center justify-center gap-[40px] ">
       <div className="flex gap-[70px] items-center justify-center w-full ">
         <div className="border-t-[#FFFFFF26] border-t-[1px] w-full "></div>
         <Image src={Coin} alt="coin" />

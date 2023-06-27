@@ -5,6 +5,8 @@ import ForbiddenIcon from "@/components/icons/ForbiddenIcon";
 import HeartIcon from "@/components/icons/HeartIcon";
 import MonitorIcon from "@/components/icons/MonitorIcon";
 import SquareIcon from "@/components/icons/SquareIcon";
+import MoneyBagIcon from "@/components/icons/MoneyBag";
+import InfoIcon from "@/components/icons/InfoIcon";
 
 // coins
 import NFT from "@/assets/images/coins/nft.png";
@@ -34,6 +36,8 @@ import Facebook from "@/assets/images/socials/facebook.png";
 import Instagram from "@/assets/images/socials/instagrams.png";
 import Twitter from "@/assets/images/socials/twitter.png";
 import LinkedIn from "@/assets/images/socials/linkedIn.png";
+import ChartIcon from "@/components/icons/ChartIcon";
+
 
 export const subNav = [
   {
@@ -63,6 +67,75 @@ export const subNav = [
   {
     title: "dApps",
     icon: <CubeIcon />,
+  },
+];
+
+export const nftSubNav = [
+  {
+    title: "How is works",
+    icon: <CardIcon />,
+  },
+  {
+    title: "Collect",
+    icon: <SquareIcon />,
+  },
+  {
+    title: "Send",
+    icon: <ChartIcon />,
+  },
+  {
+    title: "Store",
+    icon: <HeartIcon />,
+  },
+  {
+    title: "Buy/Sell",
+    icon: <MonitorIcon />,
+  },
+
+  {
+    title: "Value of NFT",
+    icon: <CubeIcon />,
+  },
+  
+];
+
+export const walletSubNav = [
+  {
+    title: "How is works",
+    icon: <CardIcon />,
+  },
+  {
+    title: "Buy",
+    icon: <SquareIcon />,
+  },
+  {
+    title: "Exchange",
+    icon: <ChartIcon />,
+  },
+  {
+    title: "Price Chart",
+    icon: <HeartIcon />,
+  },
+ 
+
+  {
+    title: "BTC",
+    icon: <CubeIcon />,
+  },
+];
+
+export const stakingSubNav = [
+  {
+    title: "Benefits",
+    icon: <CardIcon />,
+  },
+  {
+    title: "How to earn",
+    icon: <MoneyBagIcon />,
+  },
+  {
+    title: "Value of staking",
+    icon: <InfoIcon />,
   },
 ];
 

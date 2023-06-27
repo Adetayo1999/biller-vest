@@ -19,7 +19,9 @@ const CCW: FC<Props> = ({
     <section
       className={`resp-margin border-1px py-[25px] flex justify-between items-center  `}
     >
-      <div className={` text-[35px]  ${fontWeight} `}>{title}</div>
+      <div className={` text-[35px]  ${fontWeight} `}>
+        {title.replace("%20", " ")}
+      </div>
       <div className={`flex items-center gap-10  `}>
         {list.map((item, index) => (
           <button

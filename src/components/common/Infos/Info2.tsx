@@ -5,12 +5,13 @@ import { FC } from "react";
 
 interface Props {
   image?: string | StaticImageData;
-  textArr:Array<{ head: string; paragraph: string }>;
+  textArr: Array<{ head: string; paragraph: string }>;
+  reversedRow?: boolean;
 }
 
-const Info2: FC<Props> = ({ image, textArr }) => {
+const Info2: FC<Props> = ({ image, textArr, reversedRow }) => {
   return (
-    <section className="bg-primary-main resp-padding flex items-center " >
+    <section className={`bg-primary-main resp-padding flex ${reversedRow ? 'flex-row-reverse': "flex-row"} items-center `}>
       <div className="flex-1 flex flex-col gap-[80px] ">
         {textArr.map((text, index) => (
           <div className="" id={`${index}`}>

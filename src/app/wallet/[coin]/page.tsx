@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 import Devices from "@/assets/images/wallet-img.png";
 
 import HowItWorks from "@/components/common/nft/HowItWorks";
+import WalletInfo from "@/components/common/wallet/WalletInfo";
 
 const Wallet = () => {
   const params = useParams();
@@ -30,6 +31,7 @@ const Wallet = () => {
         title={`How ${params.coin} Works on BillerVest`}
         btnColor="bg-[#048FF9]"
       />
+      <WalletInfo />
     </section>
   );
 };

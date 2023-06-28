@@ -6,14 +6,14 @@ import Image from "next/image";
 
 const BillervestCoin = () => {
   return (
-    <section className="my-[200px] resp-margin flex flex-col items-center justify-center gap-[40px] ">
-      <div className="flex gap-[70px] items-center justify-center w-full ">
+    <section className="my-[100px] md:my-[200px] resp-margin flex flex-col items-center justify-center gap-[40px] ">
+      <div className="flex gap-5 md:gap-[70px] items-center justify-center w-full ">
         <div className="border-t-[#FFFFFF26] border-t-[1px] w-full "></div>
         <Image src={Coin} alt="coin" />
         <div className="border-t-[#FFFFFF26] border-t-[1px] w-full "></div>
       </div>
 
-      <p className="text-[#D4D4D4] font-normal text-[20px] text-center max-w-[700px]  ">
+      <p className="text-[#D4D4D4] font-normal text-[16px] md:text-[20px] text-center max-w-[700px]  ">
         Get the BillerVest Wallet and enjoy its simplicity, privacy and the
         community built around it. An excellent way to manage your crypto, just
         a click away

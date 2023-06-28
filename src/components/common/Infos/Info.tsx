@@ -44,24 +44,36 @@ const Info: FC<Props> = ({
 }) => {
   return (
     <div
-      className={`py-[50px] resp-padding ${bgColor} ${contentGap} flex items-center ${
-        reversedRow ? "flex-row-reverse" : "flex-row"
+      className={`py-[50px] resp-padding ${bgColor} ${contentGap} flex flex-col gap-5 md:gap-0 items-center ${
+        reversedRow ? "  md:flex-row-reverse" : "  md:flex-row"
       } `}
     >
-      <div className={`flex-1 self-end flex ${reversedRow && "justify-end"} `}>
+      <div
+        className={`flex-1 md:self-end items-center flex ${
+          reversedRow && "justify-end"
+        } `}
+      >
         <Image src={image!} alt="img" />
       </div>
-      <div className="flex-1">
-        <h2 className="font-semibold text-[40px] ">{title}</h2>
+      <div className="flex-1 flex items-center md:items-start flex-col ">
+        <h2 className="font-semibold text-[25px] md:text-[40px] text-center md:text-start ">
+          {title}
+        </h2>
         <div
-          className={` flex ${reverseCol ? "flex-col-reverse" : "flex-col"}  `}
+          className={` flex ${
+            reverseCol ? " md:flex-col-reverse" : "flex-col"
+          }  `}
         >
           {list && (
-            <div className="mt-[30px] flex flex-col gap-[15px] ">
+            <div className="mt-[30px] flex flex-col gap-3 md:gap-[15px] ">
               {list.map((item, index) => (
                 <div
                   className={`flex ${
-                    listGap ? listGap : isFullStop ? "gap-[2px]" : "gap-[25px] "
+                    listGap
+                      ? listGap
+                      : isFullStop
+                      ? "gap-[2px]"
+                      : "gap-4 md:gap-[25px] "
                   }   items-center `}
                   id={`${index}`}
                 >
@@ -73,10 +85,16 @@ const Info: FC<Props> = ({
                     {isFullStop ? (
                       <span className="text-blue-text  ">·</span>
                     ) : (
-                      <Image src={Dot} alt="dot" height={15} width={15} />
+                      <Image
+                        src={Dot}
+                        alt="dot"
+                        height={15}
+                        width={15}
+                        className="h-[15px] w-[15px] "
+                      />
                     )}
                   </div>
-                  <p className="text-blue-text font-normal text-[18px] ">
+                  <p className="text-blue-text font-normal text-[16px] md:text-[18px] ">
                     {item.content}
                   </p>
                 </div>
@@ -85,7 +103,7 @@ const Info: FC<Props> = ({
           )}
           {paragraph && (
             <p
-              className={` text-blue-text font-normal mt-[35px] text-[18px] ${paragraphWidth} `}
+              className={` text-blue-text font-normal mt-[35px] text-center md:text-start  text-[16px] md:text-[18px] ${paragraphWidth} `}
             >
               {paragraph}
             </p>

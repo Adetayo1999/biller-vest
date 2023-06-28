@@ -19,22 +19,22 @@ const HowItWorks: FC<Props> = ({
 }) => {
   return (
     <section className="bg-primary-main resp-padding flex items-center flex-col ">
-      <h2 className=" text-[50px] mb-[30px] ">{title}</h2>
-      <h3 className="text-blue-text text-center max-w-[950px] leading-[30.47px] font-[400] text-[22px] ">
+      <h2 className=" text-[25px] md:text-[50px] mb-[15px] md:mb-[30px] ">{title}</h2>
+      <h3 className="text-blue-text text-center max-w-[950px] leading-[30.47px] font-[400] text-[18px] md:text-[22px] ">
         We have a number of benefits that will improve your NFT wallet and it’s
         management
       </h3>
-      <div className="mt-[60px] grid grid-cols-3 gap-[50px] ">
+      <div className="mt-10 md:mt-[60px] grid grid-cols-1 md:grid-cols-3 gap-[35px] md:gap-[50px] ">
         {listArr.map((item, index) => (
           <div
             className="bg-main rounded-[20px] px-[25px] py-[25px] flex items-center flex-col "
             id={`t-${index}`}
           >
             <div className=" ">{item.icon}</div>
-            <h4 className="font-work text-[36px] font-[400] leading-[42.23px] ">
+            <h4 className="font-work text-[24px] md:text-[36px] font-[400] leading-[42.23px] ">
               {item.title}
             </h4>
-            <p className="mt-[37px] text-blue-text text-[18px] leading-[23.46px] font-work ">
+            <p className=" mt-[25px] text-center md:mt-[37px] text-blue-text text-[16px] md:text-[18px] leading-[23.46px] font-work ">
               {item.paragraph}
             </p>
           </div>

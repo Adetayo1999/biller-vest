@@ -12,11 +12,11 @@ interface Props {
 
 const List: FC<Props> = ({ title, arr, listGap = "gap-[22px]" }) => {
   return (
-    <div className="flex flex-col gap-6 ">
+    <div className="flex flex-col items-center md:items-start gap-6 ">
       <h4 className="font-[300] text-[#959595] text-[20px] tracking-[-2%] leading-[23.44px] ">
         {title}
       </h4>
-      <div className={`display flex flex-col ${listGap} `}>
+      <div className={`display items-center md:items-start flex flex-col ${listGap} `}>
         {arr.map((list: FooterListI, index: number) => (
           <div className="flex items-center gap-[14px] " id={`list-${index}`}>
             <Image

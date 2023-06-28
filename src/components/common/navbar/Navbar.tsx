@@ -21,14 +21,12 @@ import Wallet from "@/assets/images/coins/wallet.png";
 
 import Link from "next/link";
 
-
 const Navbar = () => {
-  
   return (
     <nav className="resp-margin py-[25px] flex justify-between items-center border-1px">
-      <div className="">
+      <Link href={"/"}>
         <Image src={Logo} alt="logo" priority height={200} width={150} />
-      </div>
+      </Link>
 
       {/* <div className="flex gap-8 items-center ">
         <div className="flex gap-10 lg:gap-16 items-center">
@@ -41,18 +39,15 @@ const Navbar = () => {
         </div>
         <Button btnText="Get Wallet" />
       </div> */}
-      <NavigationMenu.Root className="relative z-[1] flex-1 flex justify-end w-full">
+      <NavigationMenu.Root className="relative z-[1] flex-1 hidden md:flex justify-end w-full">
         <NavigationMenu.List className="flex gap-8 items-center ">
           {navLinks.map((item) => (
             <NavigationMenu.Item className="flex">
-              <NavigationMenu.Trigger
-                className="group flex gap-2 items-center "
-               
-              >
+              <NavigationMenu.Trigger className="group flex gap-2 items-center ">
                 {item.isDropDown ? (
                   <span> {item.title}</span>
                 ) : (
-                  <Link href={`/${item.route}`} >{item.title}</Link>
+                  <Link href={`/${item.route}`}>{item.title}</Link>
                 )}
                 <div className=" relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180">
                   {item.isDropDown && <ArrowDown />}
@@ -71,6 +66,7 @@ const Navbar = () => {
                         className="flex group items-center gap-3 "
                       >
                         <Image
+                          priority
                           src={link.image}
                           alt={link.name}
                           className="h-[20px] w-[20px] "

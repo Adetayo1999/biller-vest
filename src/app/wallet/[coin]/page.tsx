@@ -21,7 +21,7 @@ const Wallet = () => {
       <CTA
         title="Manage and Save your"
         titleStyle="text-[50px] font-[300px] mt-[15px] "
-        coinNameStyle="font-[400] text-[55px] "
+        coinNameStyle="font-[400] text-[50px] md:text-[55px] "
         sectionMargin="mt-[-40px]"
         coinName={`${params.coin}`}
         image={Devices}

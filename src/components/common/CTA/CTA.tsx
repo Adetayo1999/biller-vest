@@ -25,27 +25,29 @@ const CTA: FC<Props> = ({
   paragraph,
   image,
   coinName,
-  titleStyle = "font-normal text-[70px] ",
+  titleStyle = "font-normal !text-[45px] md:text-[70px] ",
   coinNameStyle,
   sectionMargin = "mt-[55px]",
 }) => {
   return (
     <section
-      className={`resp-margin ${sectionMargin} flex justify-between items-center `}
+      className={`resp-margin ${sectionMargin} flex 
+      flex-col-reverse md:flex-row
+       md:justify-between md:items-center `}
     >
-      <div className="">
-        <h1 className={titleStyle}>
+      <div className="flex flex-col items-center md:items-start ">
+        <h1 className={`${titleStyle} text-center mt-5 md:mt-0 md:text-start  `}>
           {title} <span className={coinNameStyle}>{coinName}</span>{" "}
         </h1>
-        <p className="font-normal text-[26px] ">{paragraph}</p>
+        <p className="font-normal text-[22px] md:text-[26px] text-center md:text-start ">{paragraph}</p>
         {list && (
           <div className="mt-[20px] flex flex-col gap-4  ">
             {list.map((item, index) => (
-              <div className="flex gap-1 items-center " id={`${index}`}>
+              <div className="flex gap-2 md:gap-1 items-center " id={`${index}`}>
                 <div className="h-[15px] w-[15px] ">
                   <Image src={Dot} alt="dot" height={15} width={15} />
                 </div>
-                <p className="text-blue-text font-normal text-[20px] ">
+                <p className="text-blue-text font-normal text-[18px] md:text-[20px] ">
                   {item.content}
                 </p>
               </div>

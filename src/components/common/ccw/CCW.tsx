@@ -17,12 +17,12 @@ const CCW: FC<Props> = ({
 }) => {
   return (
     <section
-      className={`resp-margin border-1px py-[25px] flex justify-between items-center  `}
+      className={`resp-margin border-1px py-[25px] flex flex-col  md:flex-row md:justify-between  md:items-center  `}
     >
-      <div className={` text-[35px]  ${fontWeight} `}>
+      <div className={` text-[35px] mb-5 md:mb-0 ${fontWeight} `}>
         {title.replace("%20", " ")}
       </div>
-      <div className={`flex items-center gap-10  `}>
+      <div className={`flex flex-wrap items-center gap-4 md:gap-10  `}>
         {list.map((item, index) => (
           <button
             id={`${index}`}

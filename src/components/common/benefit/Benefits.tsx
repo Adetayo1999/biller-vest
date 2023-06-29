@@ -8,13 +8,13 @@ import Image from "next/image";
 const Benefits = () => {
   return (
     <section className="bg-primary-main resp-padding flex flex-col items-center justify-center ">
-      <h2 className="text-[50px] font-[400] ">Benefits</h2>
-      <div className="grid grid-cols-2 gap-8 mt-[60px] ">
+      <h2 className="text-[30px] md:text-[50px] font-[400] ">Benefits</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[60px] ">
         {benefitsList.map((item) => (
           <div className=" h-[550px] w-full bg-[#230251] rounded-[20px] p-[34px] flex flex-col items-center  ">
             <h3 className="font-[400] text-[40px] " >{item.title}</h3>
-            <div className="h-[500px] w-[500px] flex items-center justify-center ">
-              <Image src={item.image} alt="img" />
+            <div className="relative h-full w-full md:h-[400px] md:w-[400px] flex object-fill aspect-auto items-center justify-center ">
+              <Image src={item.image} alt="img" fill  />
             </div>
           </div>
         ))}

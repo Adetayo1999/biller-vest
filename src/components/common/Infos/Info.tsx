@@ -61,8 +61,8 @@ const Info: FC<Props> = ({
           {title}
         </h2>
         <div
-          className={` flex ${
-            reverseCol ? " md:flex-col-reverse" : "flex-col"
+          className={` flex flex-col-reverse ${
+            reverseCol ? " md:flex-col-reverse" : "md:flex-col"
           }  `}
         >
           {list && (

@@ -1,0 +1,35 @@
+"use client";
+
+import { SvgProps } from "@/types";
+import { FC } from "react";
+
+const WindowsIcon: FC<SvgProps> = (props) => {
+  return (
+    <svg
+      width="33"
+      height="32"
+      viewBox="0 0 33 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g clip-path="url(#clip0_126_1260)">
+        <path
+          d="M31.9998 0.409302L15.2498 2.8678V15.3256L31.9998 15.1921V0.409302ZM0.911594 16.6773L0.912344 27.2783L13.6101 29.0241L13.6001 16.7598L0.911594 16.6773ZM15.1166 16.8473L15.1401 29.2136L31.9841 31.5908L31.9881 16.8751L15.1166 16.8473ZM0.902344 4.8243L0.914094 15.4201L13.6118 15.3478L13.6061 3.0938L0.902344 4.8243Z"
+          fill="#00ADEF"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_126_1260">
+          <rect
+            width="32"
+            height="32"
+            fill="white"
+            transform="translate(0.5)"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+export default WindowsIcon;

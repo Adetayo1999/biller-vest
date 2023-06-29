@@ -42,12 +42,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="resp-margin py-[25px] flex justify-between items-center border-1px">
+    <nav className="mobile-fixed bg-main resp-padding md:resp-margin py-[25px] flex justify-between items-center border-1px">
       <Link href={"/"}>
         <Image src={Logo} alt="logo" priority height={200} width={150} />
       </Link>
       {/* mobile  */}
-      <div className="">
+      <div className="  md:hidden">
         <div className={`mobile-nav ${openMobileNav ? "active" : "close"} `}>
           <div className="p-6 flex flex-col  ">
             <button className=" self-end " onClick={toggleNav}>

@@ -69,6 +69,7 @@ const Navbar = () => {
                       <Link
                         className="text-[25px] font-[300]  "
                         href={`${item.route}`}
+                        onClick={toggleNav}
                       >
                         {item.title}
                       </Link>
@@ -84,7 +85,8 @@ const Navbar = () => {
                   {item.isDropDown && activeId === item.id && (
                     <div
                       className={`${
-                        activeId === item.id && "transition-all duration-[.45s] "
+                        activeId === item.id &&
+                        "transition-all duration-[.45s] "
                       } border-b-[.5px] mt-5 pb-4 border-b-[#8a8989] `}
                     >
                       <ul className="flex flex-col gap-4 pb-4 pr-[2rem] ">

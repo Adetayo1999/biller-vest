@@ -18,7 +18,7 @@ const List: FC<Props> = ({ title, arr, listGap = "gap-[22px]" }) => {
       </h4>
       <div className={`display items-center md:items-start flex flex-col ${listGap} `}>
         {arr.map((list: FooterListI, index: number) => (
-          <div className="flex items-center gap-[14px] " id={`list-${index}`}>
+          <div className="flex items-center gap-[14px] " key={`list-${index}`}>
             <Image
               src={list.image}
               alt={list.title}

@@ -25,7 +25,7 @@ const CCW: FC<Props> = ({
       <div className={`flex flex-wrap items-center gap-4 md:gap-10  `}>
         {list.map((item, index) => (
           <button
-            id={`${index}`}
+            key={`${index}`}
             className={`flex gap-2 items-center ${
               reversedRow ? "flex-row-reverse" : "flex-row"
             } `}

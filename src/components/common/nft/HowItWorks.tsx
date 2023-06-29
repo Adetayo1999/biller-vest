@@ -4,6 +4,7 @@ import Button from "@/components/form/Button";
 import CCIcon from "@/components/icons/CCIcon";
 import FlexibleIcon from "@/components/icons/FlexibleIcon";
 import ShieldIcon from "@/components/icons/ShieldIcon";
+import GetWalletModal from "@/components/modal/GetWalletModal";
 import { FC } from "react";
 
 interface Props {
@@ -19,7 +20,9 @@ const HowItWorks: FC<Props> = ({
 }) => {
   return (
     <section className="bg-primary-main resp-padding flex items-center flex-col ">
-      <h2 className=" text-[25px] md:text-[50px] mb-[15px] md:mb-[30px] ">{title}</h2>
+      <h2 className=" text-[25px] md:text-[50px] mb-[15px] md:mb-[30px] ">
+        {title}
+      </h2>
       <h3 className="text-blue-text text-center max-w-[950px] leading-[30.47px] font-[400] text-[18px] md:text-[22px] ">
         We have a number of benefits that will improve your NFT wallet and it’s
         management
@@ -28,7 +31,7 @@ const HowItWorks: FC<Props> = ({
         {listArr.map((item, index) => (
           <div
             className="bg-main rounded-[20px] px-[25px] py-[25px] flex items-center flex-col "
-            id={`t-${index}`}
+            key={`t-${index}`}
           >
             <div className=" ">{item.icon}</div>
             <h4 className="font-work text-[24px] md:text-[36px] font-[400] leading-[42.23px] ">
@@ -41,11 +44,23 @@ const HowItWorks: FC<Props> = ({
         ))}
       </div>
       <div className="mt-[60px] ">
-        <Button
-          btnText={btnTitle}
-          bgColor={btnColor}
-          paddingInline="px-[50px]"
-        />
+        {btnTitle.includes("Get Wallet") ? (
+          <GetWalletModal
+            triggerChild={
+              <Button
+                btnText={btnTitle}
+                bgColor={btnColor}
+                paddingInline="px-[50px]"
+              />
+            }
+          />
+        ) : (
+          <Button
+            btnText={btnTitle}
+            bgColor={btnColor}
+            paddingInline="px-[50px]"
+          />
+        )}
       </div>
     </section>
   );

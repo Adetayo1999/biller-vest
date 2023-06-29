@@ -34,7 +34,7 @@ const Footer = () => {
             </h6>
             <div className="flex justify-between gap-7 items-center mt-[29px] ">
               {socialsList.map((item) => (
-                <Image src={item.image} alt={item.title} id={item.title} />
+                <Image src={item.image} alt={item.title} key={item.title} />
               ))}
             </div>
           </div>

@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import Dot from "@/assets/images/dot.png";
 import { FC } from "react";
 import Button from "@/components/form/Button";
+import GetWalletModal from "@/components/modal/GetWalletModal";
 
 interface Props {
   bgColor?: string;
@@ -75,7 +76,7 @@ const Info: FC<Props> = ({
                       ? "gap-[2px]"
                       : "gap-4 md:gap-[25px] "
                   }   items-center `}
-                  id={`${index}`}
+                  key={`${index}`}
                 >
                   <div
                     className={`${
@@ -111,13 +112,27 @@ const Info: FC<Props> = ({
         </div>
         {showBtns && (
           <div className="flex items-center mt-[50px] gap-6 ">
-            <Button
-              btnText={btnTitle1}
-              bgColor={btnColor1}
-              paddingBlock="py-[15px] "
-              paddingInline="px-[45px]"
-              textStyle="font-normal text-[16px] "
-            />
+            {btnTitle1.includes("Get Wallet") ? (
+              <GetWalletModal
+                triggerChild={
+                  <Button
+                    btnText={btnTitle1}
+                    bgColor={btnColor1}
+                    paddingBlock="py-[15px] "
+                    paddingInline="px-[45px]"
+                    textStyle="font-normal text-[16px] "
+                  />
+                }
+              />
+            ) : (
+              <Button
+                btnText={btnTitle1}
+                bgColor={btnColor1}
+                paddingBlock="py-[15px] "
+                paddingInline="px-[45px]"
+                textStyle="font-normal text-[16px] "
+              />
+            )}
 
             {btnTitle2 && (
               <Button

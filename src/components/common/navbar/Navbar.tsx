@@ -18,18 +18,115 @@ import Tether from "@/assets/images/coins/tether.png";
 import USD from "@/assets/images/coins/usd.png";
 import Eth from "@/assets/images/coins/eth.png";
 import Wallet from "@/assets/images/coins/wallet.png";
+import { IoMenu, IoClose } from "react-icons/io5";
+import { FiChevronDown } from "react-icons/fi";
 
 import Link from "next/link";
 import GetWalletModal from "@/components/modal/GetWalletModal";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [openMobileNav, setOpenMobileNav] = useState<boolean>(false);
+  const [activeId, setActiveId] = useState<number | null>(null);
+
+  const toggleNav = (): void => {
+    setOpenMobileNav((prev) => !prev);
+  };
+
+  const openList = (id: number): void => {
+    if (activeId !== null && activeId === id) {
+      setActiveId(null);
+    } else {
+      setActiveId(id);
+    }
+  };
+
   return (
     <nav className="resp-margin py-[25px] flex justify-between items-center border-1px">
       <Link href={"/"}>
         <Image src={Logo} alt="logo" priority height={200} width={150} />
       </Link>
+      {/* mobile  */}
+      <div className="">
+        <div className={`mobile-nav ${openMobileNav ? "active" : "close"} `}>
+          <div className="p-6 flex flex-col  ">
+            <button className=" self-end " onClick={toggleNav}>
+              <IoClose color="#fff" size={30} />
+            </button>
 
-      <div className="flex items-center gap-[30px] ">
+            <div className="flex flex-col gap-5 mt-9 ">
+              {navLinks.map((item, index) => (
+                <div
+                  role="button"
+                  onClick={() => openList(item.id)}
+                  key={index}
+                  className="group flex flex-col "
+                >
+                  <div className=" flex  items-center justify-between border-b-[.5px] pb-4 border-b-[#8a8989]">
+                    {item.isDropDown ? (
+                      <li className="text-[25px] font-[300]">{item.title}</li>
+                    ) : (
+                      <Link
+                        className="text-[25px] font-[300]  "
+                        href={`${item.route}`}
+                      >
+                        {item.title}
+                      </Link>
+                    )}
+
+                    <div className={`${activeId === item.id && "rotate-180"}`}>
+                      {item.isDropDown && (
+                        <FiChevronDown size={20} color="#fff" />
+                      )}
+                    </div>
+                  </div>
+
+                  {item.isDropDown && activeId === item.id && (
+                    <div
+                      className={`${
+                        activeId === item.id && "transition-all duration-[.45s] "
+                      } border-b-[.5px] mt-5 pb-4 border-b-[#8a8989] `}
+                    >
+                      <ul className="flex flex-col gap-4 pb-4 pr-[2rem] ">
+                        {item.links?.map((link, index) => (
+                          <Link
+                            href={`/${item.route}/${link.name}`}
+                            key={`link-${index}`}
+                            className="flex group items-center gap-3 "
+                            onClick={toggleNav}
+                          >
+                            <Image
+                              priority
+                              src={link.image}
+                              alt={link.name}
+                              className="h-[20px] w-[20px] "
+                            />
+                            {item.title.toLowerCase() === "staking" && (
+                              <span>Staking </span>
+                            )}
+                            {link.name}
+
+                            {item.title.toLowerCase() === "wallet" && (
+                              <span> Wallet</span>
+                            )}
+                          </Link>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <button onClick={toggleNav} className="cursor-pointer ">
+          <IoMenu color="#fff" size={30} />
+        </button>
+      </div>
+
+      {/* desktop navbar  */}
+      <div className=" hidden md:flex items-center gap-[30px] ">
         <NavigationMenu.Root className="relative z-[1] flex-1 hidden md:flex justify-end w-full">
           <NavigationMenu.List className="flex gap-8 items-center ">
             {navLinks.map((item, index) => (
@@ -68,11 +165,17 @@ const Navbar = () => {
                             priority
                             src={link.image}
                             alt={link.name}
-                           
                             className="h-[20px] w-[20px] "
                           />
                           <span className="group-hover:text-blue-text ">
-                            Staking {link.name}
+                            {item.title.toLowerCase() === "staking" && (
+                              <span>Staking </span>
+                            )}
+                            {link.name}
+
+                            {item.title.toLowerCase() === "wallet" && (
+                              <span> Wallet</span>
+                            )}
                           </span>
                         </Link>
                       ))}
@@ -92,6 +195,7 @@ export default Navbar;
 
 const navLinks = [
   {
+    id: 1,
     title: "Staking",
     isDropDown: true,
     route: "staking",
@@ -126,8 +230,9 @@ const navLinks = [
       },
     ],
   },
-  { title: "NFT", route: "nft", isDropDown: false },
+  { id: 2, title: "NFT", route: "nft", isDropDown: false },
   {
+    id: 3,
     title: "Wallet",
     route: "wallet",
     isDropDown: true,
@@ -167,5 +272,5 @@ const navLinks = [
       },
     ],
   },
-  { title: "Support", isDropDown: false },
+  { id: 4, title: "Support", isDropDown: false },
 ];

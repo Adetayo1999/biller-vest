@@ -87,6 +87,28 @@ input {
   }
 }
 
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.45s ease-in-out;
+  transform: translateX(200%);
+  z-index: 999;
+  background-color: #19013a;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.mobile-nav.active {
+  transform: translateX(0);
+}
+
 .DialogOverlay {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;

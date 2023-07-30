@@ -5,6 +5,7 @@ import Dot from "@/assets/images/dot.png";
 import { FC } from "react";
 import Button from "@/components/form/Button";
 import GetWalletModal from "@/components/modal/GetWalletModal";
+import CryptoConverter from "@/components/modal/CryptoConverter";
 
 interface Props {
   bgColor?: string;
@@ -113,7 +114,7 @@ const Info: FC<Props> = ({
         {showBtns && (
           <div className="flex items-center mt-[50px] gap-6 ">
             {btnTitle1.includes("Get Wallet") ? (
-              <GetWalletModal
+              <CryptoConverter
                 triggerChild={
                   <Button
                     btnText={btnTitle1}
@@ -125,12 +126,16 @@ const Info: FC<Props> = ({
                 }
               />
             ) : (
-              <Button
-                btnText={btnTitle1}
-                bgColor={btnColor1}
-                paddingBlock="py-[15px] "
-                paddingInline="px-[45px]"
-                textStyle="font-normal text-[16px] "
+              <CryptoConverter
+                triggerChild={
+                  <Button
+                    btnText={btnTitle1}
+                    bgColor={btnColor1}
+                    paddingBlock="py-[15px] "
+                    paddingInline="px-[45px]"
+                    textStyle="font-normal text-[16px] "
+                  />
+                }
               />
             )}
 

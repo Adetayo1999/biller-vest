@@ -3,6 +3,7 @@ import "./globals.scss";
 import { Roboto } from "next/font/google";
 import BillervestCoin from "@/components/common/product/BillervestCoin";
 import Footer from "@/components/common/footer/Footer";
+import { Metadata } from "next";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -11,7 +12,7 @@ const roboto = Roboto({
   display: "swap",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "BillerVest",
   description: "BillerVest web app",
 };
@@ -28,6 +29,12 @@ export default function RootLayout({
         {children}
         <BillervestCoin />
         <Footer />
+
+        <script
+          defer
+          type="text/javascript"
+          src="https://changenow.io/embeds/exchange-widget/v2/stepper-connector.js"
+        ></script>
       </body>
     </html>
   );

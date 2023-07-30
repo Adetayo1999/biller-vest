@@ -13,13 +13,19 @@ import Trezor from "@/assets/images/logos/trezor.png";
 import Trustee from "@/assets/images/logos/trustee.png";
 import Image from "next/image";
 import PrivacyAndSec from "./atoms/PrivacyAndSec";
+import { useId } from "react";
 
 const Security = () => {
   return (
     <section className="bg-primary-main mt-[90px] resp-padding ">
       <div className="logos">
         {logoImages.map((item, index) => (
-          <Image src={item.img} alt="img" id={`${index}`} />
+          <Image
+            src={item.img}
+            alt="img"
+            id={`${index}`}
+            key={`${index}-${useId()}`}
+          />
         ))}
       </div>
       <PrivacyAndSec />

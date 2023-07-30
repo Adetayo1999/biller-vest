@@ -24,6 +24,7 @@ import { FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
 import GetWalletModal from "@/components/modal/GetWalletModal";
 import { useState } from "react";
+import CryptoConverter from "@/components/modal/CryptoConverter";
 
 const Navbar = () => {
   const [openMobileNav, setOpenMobileNav] = useState<boolean>(false);
@@ -188,7 +189,7 @@ const Navbar = () => {
             ))}
           </NavigationMenu.List>
         </NavigationMenu.Root>
-        <GetWalletModal triggerChild={<Button btnText="Get Wallet" />} />
+        <CryptoConverter triggerChild={<Button btnText="Get Wallet" />} />
       </div>
     </nav>
   );

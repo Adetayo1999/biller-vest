@@ -4,6 +4,7 @@ import Button from "@/components/form/Button";
 import CCIcon from "@/components/icons/CCIcon";
 import FlexibleIcon from "@/components/icons/FlexibleIcon";
 import ShieldIcon from "@/components/icons/ShieldIcon";
+import CryptoConverter from "@/components/modal/CryptoConverter";
 import GetWalletModal from "@/components/modal/GetWalletModal";
 import { FC } from "react";
 
@@ -45,7 +46,7 @@ const HowItWorks: FC<Props> = ({
       </div>
       <div className="mt-[60px] ">
         {btnTitle.includes("Get Wallet") ? (
-          <GetWalletModal
+          <CryptoConverter
             triggerChild={
               <Button
                 btnText={btnTitle}

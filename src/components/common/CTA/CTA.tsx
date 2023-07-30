@@ -6,7 +6,7 @@ import Button from "@/components/form/Button";
 import AppleIcon from "@/components/icons/AppleIcon";
 import GoogleIcon from "@/components/icons/GoogleIcon";
 import Image, { StaticImageData } from "next/image";
-import { FC } from "react";
+import { FC, useId } from "react";
 
 interface Props {
   title: string;
@@ -36,14 +36,22 @@ const CTA: FC<Props> = ({
        md:justify-between md:items-center `}
     >
       <div className="flex flex-col items-center md:items-start ">
-        <h1 className={`${titleStyle} text-center mt-5 md:mt-0 md:text-start  `}>
+        <h1
+          className={`${titleStyle} text-center mt-5 md:mt-0 md:text-start  `}
+        >
           {title} <span className={coinNameStyle}>{coinName}</span>{" "}
         </h1>
-        <p className="font-normal text-[22px] md:text-[26px] text-center md:text-start ">{paragraph}</p>
+        <p className="font-normal text-[22px] md:text-[26px] text-center md:text-start ">
+          {paragraph}
+        </p>
         {list && (
           <div className="mt-[20px] flex flex-col gap-4  ">
             {list.map((item, index) => (
-              <div className="flex gap-2 md:gap-1 items-center " id={`${index}`}>
+              <div
+                className="flex gap-2 md:gap-1 items-center "
+                id={`${index}`}
+                key={`${index}-${useId()}`}
+              >
                 <div className="h-[15px] w-[15px] ">
                   <Image src={Dot} alt="dot" height={15} width={15} />
                 </div>

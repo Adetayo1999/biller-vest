@@ -14,7 +14,7 @@ const Wallet = () => {
   return (
     <section>
       <CCW
-        title={`${params.coin} Wallet`}
+        title={`${params.coin.replaceAll("%20", " ")} Wallet`}
         list={walletSubNav}
         fontWeight="font-[300] capitalize "
       />
@@ -23,12 +23,12 @@ const Wallet = () => {
         titleStyle="text-[50px] font-[300px] mt-[15px] "
         coinNameStyle="font-[400] text-[50px] md:text-[55px] "
         sectionMargin="mt-[-40px]"
-        coinName={`${params.coin}`}
+        coinName={`${params.coin.replaceAll("%20", "")}`}
         image={Devices}
         paragraph="With BillerVest Wallet"
       />
       <HowItWorks
-        title={`How ${params.coin} Works on BillerVest`}
+        title={`How ${params.coin.replaceAll("%20", "")} Works on BillerVest`}
         btnColor="bg-[#048FF9]"
       />
       <WalletInfo />

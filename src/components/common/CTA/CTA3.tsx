@@ -2,7 +2,7 @@
 import Splash from "@/assets/images/splash.png";
 import Vector from "@/assets/images/Vector1.png";
 import Button from "@/components/form/Button";
-import GetWalletModal from "@/components/modal/GetWalletModal";
+import CryptoConverter from "@/components/modal/CryptoConverter";
 import Image from "next/image";
 
 const CTA3 = () => {
@@ -16,7 +16,7 @@ const CTA3 = () => {
           With BillerVest Wallet
         </p>
         <div className="mt-[20px] ">
-          <GetWalletModal
+          <CryptoConverter
             triggerChild={
               <Button
                 btnText="Get Wallet"

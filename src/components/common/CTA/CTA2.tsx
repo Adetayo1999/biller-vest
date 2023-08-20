@@ -1,5 +1,5 @@
 "use client";
-import Tablet from "@/assets/images/tablet.png";
+import bannerImage from "@/assets/images/vest-image.png";
 import Image from "next/image";
 
 const CTA2 = () => {
@@ -17,7 +17,7 @@ const CTA2 = () => {
         </p>
       </div>
       <div className="flex-1 flex items-center justify-center ">
-        <Image src={Tablet} alt="tablet" priority />
+        <Image src={bannerImage} alt="tablet" priority />
       </div>
     </section>
   );

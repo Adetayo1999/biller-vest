@@ -2,14 +2,12 @@ import CTA from "@/components/common/CTA/CTA";
 import InfoContents from "@/components/common/Infos/InfoContents";
 import Security from "@/components/common/Security/Security";
 import CCW from "@/components/common/ccw/CCW";
-import Footer from "@/components/common/footer/Footer";
-import BillervestCoin from "@/components/common/product/BillervestCoin";
+// import Footer from "@/components/common/footer/Footer";
+// import BillervestCoin from "@/components/common/product/BillervestCoin";
 import BillervestFamily from "@/components/common/product/BillervestFamily";
 import TrustedWallet from "@/components/common/wallet/TrustedWallet";
 import { subNav } from "@/constants/data";
-import Tablet from "@/assets/images/tablet.png";
-
-
+import bannerImage from "@/assets/images/vest-image.png";
 
 export default function Home() {
   return (
@@ -19,7 +17,7 @@ export default function Home() {
         title="BillerVest Wallet"
         list={list}
         paragraph=" Your best option to access the world of crypto"
-        image={Tablet}
+        image={bannerImage}
       />
       <Security />
       <InfoContents />
@@ -28,7 +26,6 @@ export default function Home() {
     </main>
   );
 }
-
 
 const list = [
   {

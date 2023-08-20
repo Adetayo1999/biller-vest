@@ -275,5 +275,5 @@ const navLinks = [
       },
     ],
   },
-  { id: 4, title: "Support", isDropDown: false },
+  { id: 4, title: "Support", isDropDown: false, route: "" },
 ];

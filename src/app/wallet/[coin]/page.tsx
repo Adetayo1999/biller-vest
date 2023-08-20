@@ -4,7 +4,7 @@ import CTA from "@/components/common/CTA/CTA";
 import CCW from "@/components/common/ccw/CCW";
 import { walletSubNav } from "@/constants/data";
 import { useParams } from "next/navigation";
-import Devices from "@/assets/images/wallet-img.png";
+import bannerImage from "@/assets/images/vest-image.png";
 
 import HowItWorks from "@/components/common/nft/HowItWorks";
 import WalletInfo from "@/components/common/wallet/WalletInfo";
@@ -24,7 +24,7 @@ const Wallet = () => {
         coinNameStyle="font-[400] text-[50px] md:text-[55px] "
         sectionMargin="mt-[-40px]"
         coinName={`${params.coin.replaceAll("%20", "")}`}
-        image={Devices}
+        image={bannerImage}
         paragraph="With BillerVest Wallet"
       />
       <HowItWorks
